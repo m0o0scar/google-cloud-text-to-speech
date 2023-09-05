@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 import textToSpeech from '@google-cloud/text-to-speech';
 import { google } from '@google-cloud/text-to-speech/build/protos/protos';
@@ -44,16 +44,16 @@ export async function tts(text: string, options?: GoogleCloudTTSOptions) {
   return response.audioContent;
 }
 
-export async function handler(req: NextRequest) {
-  const { text, options } = await req.json();
+export async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { text, options } = req.body;
   const audioContent = await tts(text, options);
 
   // send the binary audio content back to client
   if (audioContent) {
     const encoded = Buffer.from(audioContent).toString('base64');
     const base64 = `data:audio/mp3;base64,${encoded}`;
-    return NextResponse.json({ audioContent: base64 });
+    res.status(200).json({ audioContent: base64 });
   } else {
-    return new Response('No audio content', { status: 500 });
+    res.status(500).send('No audio content');
   }
 }

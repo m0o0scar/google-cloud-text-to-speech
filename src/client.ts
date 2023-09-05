@@ -3,6 +3,9 @@ import { GoogleCloudTTSOptions, GoogleCloudTTSResponse } from './types';
 export async function tts(api: string, text: string, options?: GoogleCloudTTSOptions) {
   const response = await fetch(api, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({ text, options }),
   });
 

@@ -1,6 +1,6 @@
 {
   "name": "@nospoon/text-to-speech",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "types": "esm/main.d.ts",
   "module": "esm/main.js",
   "main": "build/main.js",
