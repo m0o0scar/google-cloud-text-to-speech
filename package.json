@@ -1,9 +1,9 @@
 {
   "name": "@nospoon/text-to-speech",
-  "version": "1.0.2",
-  "types": "esm/main.d.ts",
-  "module": "esm/main.js",
-  "main": "build/main.js",
+  "version": "1.2.0",
+  "types": "esm/index.d.ts",
+  "module": "esm/index.js",
+  "main": "build/index.js",
   "files": [
     "build",
     "esm"

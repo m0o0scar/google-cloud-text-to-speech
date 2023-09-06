@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "main.ts",
+    "index.ts",
     "server.ts"
   ],
   "compilerOptions": {

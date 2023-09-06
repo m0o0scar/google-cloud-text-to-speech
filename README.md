@@ -21,7 +21,7 @@ export default handler;
 ### Client
 
 ```typescript
-import { tts } from '@nospoon/text-to-speech/build/main';
+import { tts } from '@nospoon/text-to-speech';
 
 const { audioContent } = await tts('/api/xxx', content);
 const player = new Audio(audioContent);
